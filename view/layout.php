@@ -17,7 +17,7 @@ if (!isset($inicio)) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienes Raices</title>
+    <title>Bienes Raices MVC</title>
     <link rel="stylesheet" href="/BienesRaicesMVC/public/build/css/app.css">
 </head>
 
@@ -27,7 +27,7 @@ if (!isset($inicio)) {
     <header class="header <?php echo $inicio ? 'inicio' : ''; ?>">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/BienesRaices/">
+                <a href="/BienesRaicesMVC/public/index.php/">
                     <img src="/BienesRaices/build/img/logo.svg" alt="Logotipo de Bienes Raices">
                 </a>
 
@@ -38,10 +38,10 @@ if (!isset($inicio)) {
                 <div class="derecha">
                     <img src="/BienesRaices/build/img/dark-mode.svg" class="dark-mode-boton">
                     <nav class="navegacion">
-                        <a href="/BienesRaices/nosotros.php">Nosotros</a>
-                        <a href="/BienesRaices/anuncios.php">Anuncios</a>
-                        <a href="/BienesRaices/blog.php">Blog</a>
-                        <a href="/BienesRaices/contacto.php">Contacto</a>
+                        <a href="nosotros">Nosotros</a>
+                        <a href="propiedades">Anuncios</a>
+                        <a href="blog">Blog</a>
+                        <a href="contacto">Contacto</a>
                         <?php if ($autenticacion) : ?>
                             <a href="/BienesRaices/cerrar-sesion.php">Cerrar Sesión</a>
                         <?php endif; ?>
@@ -62,10 +62,10 @@ if (!isset($inicio)) {
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
-                <a href="/BienesRaices/nosotros.php">Nosotros</a>
-                <a href="/BienesRaices/anuncios.php">Anuncios</a>
-                <a href="/BienesRaices/blog.php">Blog</a>
-                <a href="/BienesRaices/contacto.php">Contacto</a>
+                <a href="nosotros">Nosotros</a>
+                <a href="propiedades">Anuncios</a>
+                <a href="blog">Blog</a>
+                <a href="contacto">Contacto</a>
             </nav>
         </div>
 

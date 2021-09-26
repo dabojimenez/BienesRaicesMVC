@@ -14,13 +14,15 @@ class PropiedadController
     {
 
         $propiedades = Propiedad::all();
+        $vendedores = Vendedor::all();
 
         // Muestra mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
 
         $router->render('Propiedades/admin', [
             'propiedades' => $propiedades,
-            'resultado' => $resultado
+            'vendedores' => $vendedores,
+            'resultado' => $resultado,
         ]);
     }
 
@@ -120,7 +122,7 @@ class PropiedadController
         ]);
     }
 
-    public static function eliminar(Router $router)
+    public static function eliminar()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //  Obtenemos el valor de nuestra variable, para validar el id

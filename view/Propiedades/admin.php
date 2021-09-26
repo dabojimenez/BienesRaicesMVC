@@ -11,7 +11,7 @@
     ?>
         
     <a href="../index.php/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
-    <a href="vendedores/crear.php" class="boton boton-amarillo">Nueva Vendedor</a>
+    <a href="../index.php/vendedores/crear" class="boton boton-amarillo">Nueva Vendedor</a>
 
     <h2>Propiedades</h2>
 
@@ -48,4 +48,39 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+
+    <h2>Vendedores</h2>
+
+    <table class="propiedades">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- Mostrar los resultados -->
+            <?php foreach ($vendedores as $vendedor) :  ?>
+                <tr>
+                    <td><?php echo $vendedor->id; ?></td>
+                    <td><?php echo $vendedor->nombre . " " . $vendedor->apellido; ?></td>
+                    <td><?php echo $vendedor->telefono; ?></td>
+                    <td>
+                        <form method="POST" class="w-100" action="../index.php/vendedores/eliminar">
+                            <!-- el type (hidden), quiere decir que esta oculto, y en este caso ocultaremos el ID -->
+                            <input type="hidden" name="id" value="<?php echo $vendedor->id; ?>">
+                            <input type="hidden" name="tipo" value="vendedor">
+                            <input type="submit" value="Eliminar" class="boton-rojo-block">
+                        </form>
+                        <a href="../index.php/vendedores/actualizar?id=<?php echo $vendedor->id; ?>" class="boton-amarillo-block">Actualizar</a>
+
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
 </main>
