@@ -18,6 +18,14 @@ class Router{
     }
 
     public function comprobarRutas(){
+        // Verificamos  si esta autenticado
+        session_start();
+        $auth = $_SESSION['login'] ?? null;
+
+        // Agregamos un arreglo para proteger ciertas rutas y las otras hacerlas publicas
+        $rutas_protegidas = ['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar',
+                            '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar' ];
+
         $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
         
@@ -25,6 +33,11 @@ class Router{
             $fn = $this->rutasGET[$urlActual] ?? null;
         }else{
             $fn = $this->rutasPOST[$urlActual] ?? null;
+        }
+
+        // Proteger las rutas
+        if (in_array($urlActual,$rutas_protegidas) && !$auth) {
+            header('Location: /BienesRaicesMVC/public/index.php/');
         }
         
         if ($fn) {

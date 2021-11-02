@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     darkMode();
 
-    //Eliminar texto de confirmación de CRUD en admin/index.php
-    setInterval(function () {
-        const mensajeConfirm = document.querySelector('.alerta.exito');
-        const padre = mensajeConfirm.parentElement;
-        padre.removeChild(mensajeConfirm);
-    }, 3500);
+    // //Eliminar texto de confirmación de CRUD en admin/index.php
+    // setInterval(function () {
+    //     const mensajeConfirm = document.querySelector('.alerta.exito');
+    //     const padre = mensajeConfirm.parentElement;
+    //     padre.removeChild(mensajeConfirm);
+    // }, 3500);
 });
 
 function darkMode() {
@@ -45,6 +45,10 @@ function evenListeners() {
     const mobileMenu = document.querySelector('.mobile-menu');
     mobileMenu.addEventListener('click', navegacionResponsive);
 
+    // Muestra campos condicionales
+    const metodoContacto = document.querySelectorAll('input[name="contacto[contacto]"]');
+    metodoContacto.forEach(input => input.addEventListener('click',mostratMetodosContacto));
+
 }
 
 function navegacionResponsive() {
@@ -58,4 +62,27 @@ function navegacionResponsive() {
     }
     //Este codigo es igual al usar los condicionales if()else
     //navegacion.classList.toggle('mostrar');
+}
+
+function mostratMetodosContacto(evento) {
+    const contactoDiv = document.querySelector('#contacto');
+    if (evento.target.value === 'telefono') {
+        contactoDiv.innerHTML = `<br>
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="tel" id="telefono" placeholder="Tu Telefono" name="contacto[telefono]" require>
+
+            <p>Elija la fecha y la hora para la llamada</p>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="contacto[fecha]">
+
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" min="09:00" max="18:00" name="contacto[hora]">
+        `;
+    }else{
+        contactoDiv.innerHTML = `
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="Tu E-mail" name="contacto[email]" require>
+        `;
+    }
+    console.log(evento);
 }

@@ -43,7 +43,10 @@ if (!isset($inicio)) {
                         <a href="blog">Blog</a>
                         <a href="contacto">Contacto</a>
                         <?php if ($autenticacion) : ?>
-                            <a href="/BienesRaices/cerrar-sesion.php">Cerrar Sesión</a>
+                            <a href="/BienesRaicesMVC/public/index.php/logout">Cerrar Sesión</a>
+                        <?php endif; ?>
+                        <?php if (!$autenticacion) : ?>
+                            <a href="/BienesRaicesMVC/public/index.php/login">Iniciar Sesión</a>
                         <?php endif; ?>
                     </nav>
                 </div>
