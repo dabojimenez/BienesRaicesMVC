@@ -27,5 +27,4 @@
 <section class="contenedor seccion">
     <h1>Más sobre nosotros</h1>
     <?php include 'iconos.php' ?>
-    
 </section>

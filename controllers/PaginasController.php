@@ -113,7 +113,7 @@ class PaginasController {
 
             // Enviar el email
             if($mail->send()){// El metodo ( send ), retorna true o false
-                $mensaje = "Mensaje enviado correctamente";
+                $mensaje = "Mensaje Enviado Correctamente";
             } else {
                 $mensaje = "El mensaje no se pudo enviar...";
             }

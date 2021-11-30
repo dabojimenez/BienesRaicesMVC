@@ -37,22 +37,22 @@ if (!isset($inicio)) {
 
                 <div class="derecha">
                     <img src="/BienesRaices/build/img/dark-mode.svg" class="dark-mode-boton">
-                    <nav class="navegacion">
+                    <nav data-cy="navegacion-header" class="navegacion">
                         <a href="nosotros">Nosotros</a>
-                        <a href="propiedades">Anuncios</a>
+                        <a href="propiedades">Propiedades</a>
                         <a href="blog">Blog</a>
                         <a href="contacto">Contacto</a>
                         <?php if ($autenticacion) : ?>
-                            <a href="/BienesRaicesMVC/public/index.php/logout">Cerrar Sesión</a>
+                            <a href="logout">Cerrar Sesión</a>
                         <?php endif; ?>
                         <?php if (!$autenticacion) : ?>
-                            <a href="/BienesRaicesMVC/public/index.php/login">Iniciar Sesión</a>
+                            <a href="login">Iniciar Sesión</a>
                         <?php endif; ?>
                     </nav>
                 </div>
             </div>
             <!-- Cierre de la barra -->
-            <?php echo $inicio ? "<h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>" : '' ?>
+            <?php echo $inicio ? "<h1 data-cy='heading-site'>Venta de Casas y Departamentos Exclusivos de Lujo</h1>" : '' ?>
         </div>
     </header>
 
@@ -64,9 +64,9 @@ if (!isset($inicio)) {
 
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
+            <nav data-cy="navegacion-footer" class="navegacion">
                 <a href="nosotros">Nosotros</a>
-                <a href="propiedades">Anuncios</a>
+                <a href="propiedades">Propiedades</a>
                 <a href="blog">Blog</a>
                 <a href="contacto">Contacto</a>
             </nav>
@@ -77,7 +77,7 @@ if (!isset($inicio)) {
         // $fecha = date('d-m-y');
         ?>
 
-        <p class="copyright">Todos los derechos Reservados <?php echo date('Y') ?> &copy;</p>
+        <p data-cy="copy-right" class="copyright">Todos los derechos Reservados <?php echo date('Y') ?> &copy;</p>
     </footer>
 
     <script src="/BienesRaicesMVC/public/build/js/bundle.min.js"></script>
