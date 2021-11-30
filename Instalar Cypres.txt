@@ -1,0 +1,39 @@
+------------------------------------------------------------------------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++ CYPRES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+------------------------------------------------------------------------------------------------------------------------------
+Link: https://www.cypress.io/
+
+Step 1) Abrimos nuestra terminal, en la raiz del proyecto y digitamos el siguiente comando
+        [ npm i --save-dev cypress ]
+        Estas dependencias, se isntalaran el el archivo package.json
+Step 2) AHora podemos ejecutar los siguientes comandos ( cypress open ) y ( cypress run )
+
+------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------CYPRES OPEN------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+Este comando nos abrira una aplicacion de escritorio
+NPM:Node Packages Manager y NPX, nos permite instalar proyectos como angular, vue.js, react native, sin necesidad de agregr una erramienta
+Uso:
+1)  Colacarmeos [ npx cypress open ] y damos enter.
+    Se nos abrira una aplicacion donde nos muetsra las pruebas, y ademas a creado una carpeta llamada ( cypress ) y todas la spruebas que nos muestras
+    estan dnetro de la carpeta (integration/examples). Son cuatro capretas (fixtures, integration, plugins, support)
+    Normalmente colocarmeos todas nuestras pruebas en la carpeta ( integration )
+2)  Ademas crea un archivo llamado ( cypress.json ) y contiene la ocnfiguracion de cypress.
+3)  Los archivos:
+    fixtures: No lo tocariamos mucho, casi nada
+    integration: Es donde guardaremos nuestras pruebas
+    plugins: Podemos instalar extensiones para modificar cypress
+    support: Podmeos registrar nuestros propios comandos
+4)  AL crear un archivo .js, debemos colocar o podemos colocar antes de .js un ( .spec ), para saber que e suna prueba:
+        Ejemplo: holamundo.spec.js
+5)  Mira el archivo holamundo.spec.js para poder seguir aprendinedo
+
+
+------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------CYPRES RUN------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+Este comando es la suit desde la terminal.
+Uso:
+1)  Colacarmeos [ npx cypress run ] y damos enter.
+    NOs mostrara todos los diferentes (spec) escaneados que tengamos en nuestro archivo, pero los muestra en consola.
+    Ademas nos creara una carpeta llamada (Videos), y es un video de todos los (spec) bastante ligero y es como funciona
